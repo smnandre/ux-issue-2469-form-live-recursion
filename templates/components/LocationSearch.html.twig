@@ -1,0 +1,39 @@
+<div{{ attributes }}>
+
+    <header id="header-id" data-live-ignore>
+        <div data-block="block_header">
+            {% block block_header %}
+                 🍪 Block "block_header" of LocationSearch component.
+            {% endblock %}
+        </div>
+    </header>
+    
+    <article id="content-id" data-block="content">
+        {% block content %}
+            <div class="grid">
+                <div style="text-align: center;">
+                    <h4>Number</h4>
+                    <p><code style="font-size: 2rem;">{{ this.number }}</code></p>
+                </div>
+                <div style="text-align: center;">
+                    <h4>Render</h4>
+                    <p><code style="font-size: 2rem;">{{ 'now'|date('H:i:s') }}</code></p>
+                </div>
+            </div>
+            <div class="grid">
+                <button type="button" data-action="live#$render" class="secondary">Render</button>
+                <button type="button" data-action="live#action" data-live-action-param="random">Randomize</button>
+                <button type="button" data-action="live#action" data-live-action-param="reset" class="secondary">Reset</button>
+            </div>
+        {% endblock %}
+    </article>
+    
+    <footer id="footer-id" data-live-ignore="true">
+        <div data-block="block_footer">
+            {% block block_footer %}
+                 🍪 Block "block_footer" of LocationSearch component.
+            {% endblock %}
+        </div>
+    </footer>
+    
+</div>
